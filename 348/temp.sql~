@@ -1,7 +1,0 @@
-SELECT tt1.cno, tt1.term, COUNT(*)		
-FROM			   	 (SELECT		cno, term, section, AVG(mark) AS avg_mark1
-						  FROM			enrollment
-						  WHERE term LIKE '_12'
-						  GROUP BY		cno, term, section) tt1
-GROUP BY tt1.term, tt1.cno
-						 ;
