@@ -1,0 +1,81 @@
+
+CS 349 USER INTERFACES
+ASSIGNMENT 1: BREAKOUT! 
+GRADING SCHEME
+
+TA: Haiyu Zhen	
+TA Email Address: h2zhen@uwaterloo.ca
+
+INSTRUCTIONS
+
+The grading scheme below awards marks based on successful completion of the 
+requirements. Note that severely deviating from the requirements may result 
+in penalties that aren't listed below (i.e. you can't write the application 
+in Java and receive a full-grade, even if you've met the requirements below). 
+
+The grades below are also based on performance observed while running in the 
+VM provided.
+
+If you have any comments, please contact the TA that graded this assignment
+(contact information above).
+
+TECHNICAL REQUIREMENTS (35%)
+
+(5/5) The assignment includes a makefile. Running "make" builds and executes 
+the program, using "reasonable" values for frame-rate and ball speed (i.e.
+although the TA may change the values passed in on the command-line, the
+game should be playable with default values). Requiring other targets 
+(e.g. make, make run) is acceptable if documented in the README file.
+
+(3/5) The program accepts two command-line parameters: (1) "frame-rate", 
+how often the screen is painted or redrawn, and (2) the "speed" of the ball 
+in-game. Changing the frame-rate should NOT change the speed of the ball.
+
+(5/5) The window can be resized, and the elements of the window scale to the 
+new window size (any consistent method of rescaling is acceptable).
+
+(15/15) The event loop is
+	--	well-structured
+	--	doesn't consume all of the CPU cycles (running "top" should show 
+		your program consuming 25% or less of the CPU).
+	--	handles events on a timely basis (flooding the the queue by 
+		resizing the window should not prevent the paddle from reacting
+		immediately after)
+
+(5/5) The game uses double-buffering to eliminate any "stuttering" in 
+gameplay. Changing the frame-rate within the range of 25-35 FPS should not 
+introduce any lag.
+
+GAMEPLAY REQUIREMENTS (45%)
+
+(4/5) When launched, the game displays a splash screen including name, user_id
+and a description of how to play the game. The splash screen and README 
+together provide sufficient instructions to play the game.
+
+(5/10) The game includes a paddle that can move left/right within the 
+boundaries of the screen. The paddle remains on-screen. The paddle 
+can be controlled with both the keyboard and the mouse.
+
+(15/15) A ball moves around the screen along a linear trajectory, and bounces 
+off the walls and paddle at an appropriate angle. The ball reacts in a 
+"reasonable" way when striking a block (i.e. the block disappears and the ball
+continues moving). When moving through an empty space (i.e. formerly occupied
+by a block), the ball should continue moving.
+
+(10/10) At least 5 rows of blocks are positioned along the top of the screen. 
+When the ball strikes a block, the block disappears.
+
+(5/5) A current-score is tracked and displayed along the top of the screen.
+
+ADDITIONAL FEATURE (10%)
+
+(7/10) A reasonably-challenging feature of your choice that enhances gameplay, 
+properly implementated.
+
+DESIGN (10%)
+
+(3/5) Aesthetics, visual appeal and design.
+(5/5) Fun, and enjoyable to play!
+
+TOTAL GRADE
+87/100

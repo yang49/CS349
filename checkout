@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#This is for svn checkout for cs349
+
+svn checkout --username y655li svn://ubuntu1204-004.student.cs.uwaterloo.ca:6002/cs349_repo/y655li .

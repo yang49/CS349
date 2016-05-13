@@ -1,0 +1,505 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>models - models</title>
+          <meta name="description" content="models - models" />
+          <meta name="keywords" content="models models" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../lib/template.js"></script>
+      <script type="text/javascript" src="../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../index.html';
+            var hash = 'models.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../lib/package_big.png" />
+        
+        <h1>models</h1><span class="permalink">
+      <a href="../index.html#models.package" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">models</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Created by bwbecker on 2015-11-18.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="models"><span>models</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="models.Ballot" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BallotextendsAnyVal"></a>
+      <a id="Ballot:Ballot"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Ballot.html"><span class="name">Ballot</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@BallotextendsAnyVal" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A value class encoding a ballot.</p><div class="fullcomment"><div class="comment cmt"><p>A value class encoding a ballot.
+Format:  xyzC where x, y, and z are the rank given to each
+of the C candidates (C is the number of candidates).
+</p></div></div>
+    </li><li name="models.BallotCache" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BallotCacheextendsProductwithSerializable"></a>
+      <a id="BallotCache:BallotCache"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BallotCache.html"><span class="name">BallotCache</span></a><span class="params">(<span name="sim">sim: <a href="Simulation.html" class="extype" name="models.Simulation">Simulation</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@BallotCacheextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Created by bwbecker on 2015-11-18.</p>
+    </li><li name="models.BallotCount" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BallotCountextendsProductwithSerializable"></a>
+      <a id="BallotCount:BallotCount"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BallotCount.html"><span class="name">BallotCount</span></a><span class="params">(<span name="sampleBallot">sampleBallot: <a href="Ballot.html" class="extype" name="models.Ballot">Ballot</a></span>, <span name="count">count: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@BallotCountextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
+    </li><li name="models.Candidate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CandidateextendsPositionwithProductwithSerializable"></a>
+      <a id="Candidate:Candidate"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Candidate.html"><span class="name">Candidate</span></a><span class="params">(<span name="x">x: <span class="extype" name="scala.Double">Double</span></span>, <span name="y">y: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result"> extends <a href="Position.html" class="extype" name="models.Position">Position</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@CandidateextendsPositionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Represent a candidate by their position on the policy plane.</p><div class="fullcomment"><div class="comment cmt"><p>Represent a candidate by their position on the policy plane.</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"></dd><dt class="param">y</dt><dd class="cmt"><p>
+</p></dd></dl></div>
+    </li><li name="models.CandidateNum" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CandidateNum=Int"></a>
+      <a id="CandidateNum:CandidateNum"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CandidateNum</span><span class="result"> = <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@CandidateNum=Int" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="models.CandidateRank" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CandidateRank=Int"></a>
+      <a id="CandidateRank:CandidateRank"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CandidateRank</span><span class="result"> = <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@CandidateRank=Int" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="models.Election" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ElectionextendsProductwithSerializable"></a>
+      <a id="Election:Election"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Election.html"><span class="name">Election</span></a><span class="params">(<span name="candidates">candidates: <span class="extype" name="scala.Seq">Seq</span>[<a href="Candidate.html" class="extype" name="models.Candidate">Candidate</a>]</span>, <span name="votersList">votersList: <a href="VotersList.html" class="extype" name="models.VotersList">VotersList</a></span>, <span name="countingMethods">countingMethods: <span class="extype" name="scala.List">List</span>[<a href="counters/CountingMethod.html" class="extype" name="models.counters.CountingMethod">CountingMethod</a>]</span>, <span name="ballotCache">ballotCache: <a href="BallotCache.html" class="extype" name="models.BallotCache">BallotCache</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@ElectionextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Created by bwbecker on 2015-11-18.</p>
+    </li><li name="models.ElectionResult" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ElectionResultextendsProductwithSerializable"></a>
+      <a id="ElectionResult:ElectionResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ElectionResult.html"><span class="name">ElectionResult</span></a><span class="params">(<span name="countingMethod">countingMethod: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="candidate">candidate: <a href="#CandidateNum=Int" class="extmbr" name="models.CandidateNum">CandidateNum</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@ElectionResultextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">countingMethod</dt><dd class="cmt"><p>A method of counting ballots (Borda, First-Past-The-Post, etc)</p></dd><dt class="param">candidate</dt><dd class="cmt"><p>The name of the candidate who won the election under that counting method
+</p></dd></dl></div>
+    </li><li name="models.ElectionSummary" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ElectionSummaryextendsAnyRef"></a>
+      <a id="ElectionSummary:ElectionSummary"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ElectionSummary.html"><span class="name">ElectionSummary</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@ElectionSummaryextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An ElectionSummary consolidates all identical ballots into just one
+BallotCount object -- which includes a sample ballot and a count of
+the ballots cast that match the sample.</p>
+    </li><li name="models.Position" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PositionextendsAnyRef"></a>
+      <a id="Position:Position"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Position.html"><span class="name">Position</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@PositionextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Created by bwbecker on 2015-11-18.</p>
+    </li><li name="models.Simulation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SimulationextendsProductwithSerializable"></a>
+      <a id="Simulation:Simulation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Simulation.html"><span class="name">Simulation</span></a><span class="params">(<span name="candidates">candidates: <span class="extype" name="scala.Seq">Seq</span>[<a href="Candidate.html" class="extype" name="models.Candidate">Candidate</a>]</span>, <span name="size">size: <span class="extype" name="scala.Int">Int</span></span>, <span name="numVoters">numVoters: <span class="extype" name="scala.Int">Int</span></span>, <span name="sigma">sigma: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@SimulationextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Information needed from the client to run a simulation.</p>
+    </li><li name="models.SimulationResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SimulationResultextendsProductwithSerializable"></a>
+      <a id="SimulationResult:SimulationResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SimulationResult.html"><span class="name">SimulationResult</span></a><span class="params">(<span name="results">results: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.List">List</span>[<a href="ElectionResult.html" class="extype" name="models.ElectionResult">ElectionResult</a>]]]</span>, <span name="countingMethods">countingMethods: <span class="extype" name="scala.Seq">Seq</span>[<a href="counters/CountingMethod.html" class="extype" name="models.counters.CountingMethod">CountingMethod</a>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@SimulationResultextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="models.Transforms" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TransformsextendsProductwithSerializable"></a>
+      <a id="Transforms:Transforms"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Transforms.html"><span class="name">Transforms</span></a><span class="params">(<span name="unitSquareSize">unitSquareSize: <span class="extype" name="scala.Int">Int</span></span>, <span name="canvasMargin">canvasMargin: <span class="extype" name="scala.Double">Double</span></span>, <span name="cacheMargin">cacheMargin: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@TransformsextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">We have three important groups of measurements going on.</p><div class="fullcomment"><div class="comment cmt"><p>We have three important groups of measurements going on.  This class helps us transform between them.</p><p>1. The &quot;policy plane&quot;, expressed in abstract units, to represent positions of candidates and
+voters.  Candidates are typically between -0.25 and +1.25 -- but that's really 0 to 1, plus
+or minus the canvasMargin.  Voters use the same units but may be outside that range, thanks
+to the Gaussian distribution.  These units are typically named &quot;pos&quot; or &quot;position&quot;.</p><p>2. The canvas upon which positions are drawn.  These are measured in integer pixels, which is
+passed in at unitSquareSize.</p><p>3. The cache used to look up distances between positions.  This is also integers (because it's
+stored in an array with integer indices).  At the moment the units are the same as the canvas
+but with an extra margin around it to catch the positions that are outside those bounds.</p><p>It's not clear to me that this is the correct decision to keep accuracy.  On the other hand,
+if the unitSquareSize is small we've already given up accuracy.</p><p>There is a graphic in eViz/docs/policyArea.graffle that hopefully sheds additional illumination on this.</p><p>Everything is a square, so can use the same conversions for both x and y coordinates.
+</p></div></div>
+    </li><li name="models.Voter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="VoterextendsPositionwithProductwithSerializable"></a>
+      <a id="Voter:Voter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Voter.html"><span class="name">Voter</span></a><span class="params">(<span name="x">x: <span class="extype" name="scala.Double">Double</span></span>, <span name="y">y: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result"> extends <a href="Position.html" class="extype" name="models.Position">Position</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@VoterextendsPositionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Represent a voter by their position on the policy plane.</p><div class="fullcomment"><div class="comment cmt"><p>Represent a voter by their position on the policy plane.</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"></dd><dt class="param">y</dt><dd class="cmt"><p>
+</p></dd></dl></div>
+    </li><li name="models.VotersList" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VotersListextendsProductwithSerializable"></a>
+      <a id="VotersList:VotersList"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="VotersList.html"><span class="name">VotersList</span></a><span class="params">(<span name="numVoters">numVoters: <span class="extype" name="scala.Int">Int</span></span>, <span name="voters">voters: <span class="extype" name="scala.Seq">Seq</span>[<a href="Voter.html" class="extype" name="models.Voter">Voter</a>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@VotersListextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Created by bwbecker on 2015-11-17.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="models.Ballot" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Ballot"></a>
+      <a id="Ballot:Ballot"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ballot$.html"><span class="name">Ballot</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@Ballot" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="models.Election" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Election"></a>
+      <a id="Election:Election"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Election$.html"><span class="name">Election</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@Election" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="models.ElectionSummary" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ElectionSummary"></a>
+      <a id="ElectionSummary:ElectionSummary"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ElectionSummary$.html"><span class="name">ElectionSummary</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@ElectionSummary" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="models.Simulation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Simulation"></a>
+      <a id="Simulation:Simulation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Simulation$.html"><span class="name">Simulation</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@Simulation" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="models.VotersList" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VotersList"></a>
+      <a id="VotersList:VotersList"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VotersList$.html"><span class="name">VotersList</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@VotersList" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="models.counters" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="counters"></a>
+      <a id="counters:counters"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="counters/package.html"><span class="name">counters</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.package@counters" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,62 @@
+-- Question: 3
+-- The strategy behind the formulation of my answer:
+-- 	First group the enrollment table by cno and term. At the same time calucate the mark
+--    and the number of students who enrolled in corresponding course
+--    Second, select the course with capacity >= 10 and find the instructor information
+--    In the end, select the professor name with corresponding eid
+
+
+
+SELECT 	p.pname, p.dept, t1.cno, t1.term, c.section, t1.avg_mark
+FROM		(SELECT 			cno, term, COUNT(sno) AS cap, AVG(mark) AS avg_mark
+			 FROM 			enrollment
+			 GROUP BY 		cno, term) t1,
+			class c,
+			professor p 
+WHERE		t1.cap >= 10 AND t1.avg_mark > 85 AND t1.cno = c.cno AND t1.term = c.term
+			AND p.eid = c.instructor
+ORDER BY p.pname, p.dept, c.cno
+			;
+			
+<OUTPUT>
+ANN|Computer Science|CS213|F11|2|85.9166666666667
+BARBARA|Computer Science|CS137|S02|3|85.25
+BARBARA|Computer Science|CS213|W00|2|85.7
+BARBARA|Computer Science|CS213|W13|1|85.4615384615385
+BARBARA|Computer Science|CS213|W13|3|85.4615384615385
+BETH|Physics|PHYS457|F01|2|86.6428571428571
+BETH|Physics|PHYS458|S07|1|85.9230769230769
+CODY|Computer Science|CS138|F00|3|85.6
+CODY|Computer Science|CS462|S06|2|87.5833333333333
+DEBORA|Physics|PHYS451|F10|1|86.8333333333333
+DEBORA|Physics|PHYS478|F01|3|85.3076923076923
+DUSTIN|Physics|PHYS214|W12|2|86.1818181818182
+DUSTIN|Physics|PHYS271|W13|3|85.1666666666667
+DUSTIN|Physics|PHYS312|W12|2|85.4615384615385
+DUSTIN|Physics|PHYS477|W11|3|86.0
+HERMINIA|Physics|PHYS229|S06|2|86.2727272727273
+HERMINIA|Physics|PHYS312|W12|1|85.4615384615385
+HOLLIS|Computer Science|CS462|S06|3|87.5833333333333
+HOLLIS|Computer Science|CS484|F06|2|86.1
+JACKLYN|Physics|PHYS147|W07|2|86.0909090909091
+JERALD|Computer Science|CS137|S02|1|85.25
+JERALD|Computer Science|CS138|F10|2|85.0769230769231
+JESSICA|Mathematics|MATH226|F12|1|85.5454545454545
+JESSICA|Mathematics|MATH399|F09|1|85.1
+JESSICA|Mathematics|MATH439|F12|1|85.4
+LILIA|Physics|PHYS189|F11|2|86.9166666666667
+LINA|Computer Science|CS350|S03|1|85.4166666666667
+MORRIS|Physics|PHYS271|W13|1|85.1666666666667
+MORRIS|Physics|PHYS458|S07|3|85.9230769230769
+PETER|Mathematics|MATH358|W00|1|86.25
+PETER|Mathematics|MATH452|F08|3|86.7272727272727
+RODRIGO|Computer Science|CS135|S11|2|86.0
+RODRIGO|Computer Science|CS350|S03|2|85.4166666666667
+RODRIGO|Computer Science|CS446|W03|2|87.7
+SHAUNA|Physics|PHYS113|S10|3|85.6
+STUART|Physics|PHYS289|F09|2|85.5
+STUART|Physics|PHYS414|W04|2|86.2
+ULYSSES|Physics|PHYS229|S06|3|86.2727272727273
+ULYSSES|Physics|PHYS312|F11|1|85.0833333333333
+ULYSSES|Physics|PHYS331|S05|1|86.7272727272727
+ULYSSES|Physics|PHYS478|F01|2|85.3076923076923

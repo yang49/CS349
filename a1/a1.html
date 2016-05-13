@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            CS349: A1
+        </title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./css/reset.css">
+        <link rel="stylesheet" type="text/css" href="./css/layout.css">
+        <link rel="stylesheet" type="text/css" href="./css/text.css">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script src="./js/jquery.js" type="text/javascript"></script>
+        <script src="./js/course.js" type="text/javascript"></script>
+        <script type="text/javascript">page = "a1"</script>
+
+        <style type="text/css">
+            .fig {
+                float: right; 
+                border: 1px solid lightgrey;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <header id="header">
+            </header>
+
+            <div id="assign_info">
+                <h3 style="margin-bottom: 0;">
+                    <strong>Assignment 1:</strong> Event Loops and Drawing (C++/Xlib)
+                </h3>
+                <h1 style="margin-top: 0;">
+                    Breakout!
+                </h1>
+                <p class="notes">
+                    <strong>Due Friday, Oct 2 at 5:00 PM</strong>
+                </p>
+            </div>
+            <div id="content">
+ 
+            <h2>Synopsis</h2>
+            <p>Implement a "breakout" game in C or C++ and Xlib.</p>
+                                
+                <p style="margin: 10pt 10pt 10pt 10pt">Breakout is a simple 2D video game, originally published by Atari in 1976. "In the game, a layer of bricks lines the top third of the screen. A ball travels across the screen, bouncing off the top and side walls of the screen. When a brick is hit, the ball bounces away and the brick is destroyed. The player loses a turn when the ball touches the bottom of the screen. To prevent this from happening, the player has a movable paddle to bounce the ball upward, keeping it in play." (see <a href="https://en.wikipedia.org/wiki/Breakout_(video_game)">Wikipedia</a>.)</p>
+
+                <p class="fig" >
+                    <img src="http://www.createdbyx.com/image.axd?picture=breakoutpic3.gif" width="400mm"><br>
+                    <br>Breakout
+                </p>                
+
+                <h2>Learning Goals</h2>
+                    <ul>
+                        <li>Learn how the event loop that underlies all GUI programs works.</li>
+                        <li>Learn how to handle real-time drawing and animation of simple graphics.</li>
+                        <li>Learn about the painter's algorithm and double buffering.</li>
+                    </ul>
+
+                <h2>Breakout Description</h2>
+                <p>There are many versions of Breakout playable on the web (<a href="http://www.roundgames.com/onlinegame/Breakout">here</a> or <a href="http://www.gamesloon.com/free-arcade-3/breakout-games-193/break-blocks-4066.html">here</a>). You need to implement a simple version that includes the following features:</p>
+                    <ul>
+                    <li>Your game should have at least 5 rows of colored blocks along the top of the screen, and a single paddle along the bottom. The player can move the paddle left and right across the screen.</li>
+                    <li>When the game starts, a ball moves across the screen, bouncing off the side and top walls in a realistic 
+                    fashion.</li>
+                    <li>If the ball hits a block, the block disappears and the ball bounces.</li>
+                    <li>If the ball strikes the paddle, it bounces. If the ball touches the bottom of the screen, the game ends.</li>
+                    <li>You should keep track of the players score, awarding points for every bounce of the ball. Display the current score on-screen during the game.</li>
+                    </ul>
+
+                <p>You also need to add one additional feature of your choice. For full marks, this feature should be a significant enhancement to gameplay (e.g. multiple levels that can be cleared, or "power-ups" that significantly enhance gameplay). Changing colors/fonts, or making other superficial additions is not a sufficient addition, and will only result in part marks for this section (see below for mark scheme).</p>
+
+                <h2>Requirements</h2>
+                    <ol>
+                        <li>Implement a breakout game of your own design using
+                            C or C++ and Xlib, meeting the gameplay requirements 
+                            described above. As described above, you need to implement one 
+                            additional feature of your choice.</li>
+                        <li>You're encouraged to be creative in this assignment! Some 
+                            portion of your grade is based on building an enjoyable and 
+                            exciting game.</li>
+                        <li>Your game must accept two command-line parameters:
+                            <ol>
+                                <li>"frame-rate", measured in frames per second, which controls 
+                                    how often the screen is painted or redrawn</li>
+                                <li>"speed", measured in pixels per second, which controls how 
+                                fast the ball moves.</li>
+                            </ol>
+                            These two measures are independent of each other.  
+                        </li>
+                        <li>Your game should open with a splash screen that includes
+                            your name, userid, and a description of how to play the
+                            game (including a description of which keys to use).</li>
+                        <li>Your game must use both the mouse and keyboard effectively. 
+                            In-game actions should include the ability to move the paddle 
+                            left and right, and quit the game.</li>
+                        <li>Gameplay should progress as described above.</li>
+                        <li>Your game must respond to window resize events.
+                            The simplest (and perfectly adequate) strategy is to
+                            scale the drawings to fit the window size.  You may
+                            limit the size of the window so long as the minimum
+                            size and maximum size are substantially different.</li>
+                        <li>Your game will be single-threaded.</li>
+                        <li>Your game will use double-buffering to eliminate any 
+                            "stuttering" in gameplay.</li>
+                        <li>Assume that the TA marking your game is a terrible
+                            gamer.  You'll want to tune the game so that it provides an 
+                            enjoyable experience for novice gamers. If your game includes 
+                            levels or features that are not apparent from the beginning of
+                            the game, you should include some sort of cheat function
+                            to allow the TA to quickly access that feature.</li>
+                        <li>Include a README file that discusses features the TA 
+                            should be sure to look for.</li>
+                        <li>Your event loop must:
+                            <ul>
+                                <li>Not consume all of the CPU cycles (test: Run the 
+                                    "top" command in one terminal while running the 
+                                    game in another.  Your game plus the X server
+                                    should consume less than 25% of the CPU -- and 
+                                    even 25% is high).</li>
+                                <li>Repaint on a regular basis (~30 times/second) (test:
+                                    Repaints at the same frequency no matter how many
+                                    events are arriving)</li>
+                                <li>Respond to events on a timely basis (test: Many 
+                                    events coming all at once (e.g. resizing
+                                    the window) should be handled without lag.)</li>
+                                <li>Be easy to understand (tests: No nested loops,
+                                    appropriate use of helper functions, etc.)</li>
+                            </ul>
+                        </li>
+                        <li>Submit a MakeFile such that the first target will compile
+                            and execute your program.</li>
+                    </ol>
+                          
+                <h2>Submission</h2>
+                    <p>Check in to your personal SVN repository: </p>
+                    <ul>
+                        <li>All files required to compile and run your program.</li>
+                        <li>A <code>MakeFile</code> such that the first target compiles 
+                            and executes your program.</li>
+                        <li>A <code>README.txt</code> file to the marker.</li>
+                        <li>Optional: <code>Feedback.txt</code> with your feedback on the assignment 
+                            (i.e. feedback on the design of the assignment).</li>
+                    </ul>
+
+                <h2>Assessment</h2>
+
+                <dl class="assess">
+                    <dt>30%</dt><dd>Technical requirements met, including command-line parameters, 
+                        proper handling of the event loop. There is no lag, and the screen 
+                        resizes and repaints properly.</dd>
+                    <dt>50%</dt><dd>Working game that meets the basic gameplay requirements described above.</dd>
+                    <dt>10%</dt><dd>Additional feature of your choice, properly implemented!</dd>
+                    <dt>10%</dt><dd>Screen design, aesthetics, enjoyable gameplay.</dd>
+                </dl>
+
+            </div>
+        
+        <footer id="footer"></footer>
+
+    </body>
+    <script>
+    // Quick and dirty file inclusion w/o needing to run a server where I prep the website.
+    $(document).ready(function() {
+        $("#header").load("fragments/header.html", "", 
+            function() {$("#main-nav-" + page).addClass("on");});
+        $("#footer").load("fragments/footer.html");
+    })
+
+    </script>
+</html>
+
+

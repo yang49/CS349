@@ -1,0 +1,85 @@
+-- Question: 6
+-- The strategy behind the formulation of my answer:
+--		First group the enrollment by cno, term and section. Calculate the how many courses a student
+--    have taken and the course avg for a corresponding course, and find the professors who does not
+--    meet the constrain. Use except to factor out them
+--    find the pname through class table and professor table and the data with class size and avg mark
+
+
+SELECT		p.pname,  t7.cno, t7.term, t7.section, t7.cap, t7.avg_mark
+FROM			(SELECT		t2.instructor
+				 FROM			(SELECT   c.instructor, t1.cno, t1.term, t1.section, t1.cap, t1.avg_mark
+								 FROM		(SELECT		cno, term, section, COUNT(sno) AS cap, AVG(mark) AS avg_mark
+											 FROM			enrollment
+											 GROUP BY	cno, term, section) t1,
+											 class c
+								 WHERE    t1.cno = c.cno AND t1.term = c.term AND t1.section = c.section) t2
+				 GROUP BY    t2.instructor, t2.cno, t2.term, t2.section
+
+				 EXCEPT
+
+				 SELECT		t4.instructor
+				 FROM			(SELECT   c1.instructor, t3.cno, t3.term, t3.section, t3.cap, t3.avg_mark
+								 FROM		(SELECT		cno, term, section, COUNT(sno) AS cap, AVG(mark) AS avg_mark
+											 FROM			enrollment
+											 GROUP BY	cno, term, section) t3,
+											 class c1
+								 WHERE    t3.cno = c1.cno AND t3.term = c1.term AND t3.section = c1.section) t4
+				 GROUP BY    t4.instructor, t4.cno, t4.term, t4.section
+				 HAVING		t4.cap < 10) t5,
+				 
+				 (SELECT   c2.instructor, t6.cno, t6.term, t6.section, t6.cap, t6.avg_mark
+								 FROM		(SELECT		cno, term, section, COUNT(sno) AS cap, AVG(mark) AS avg_mark
+											 FROM			enrollment
+											 GROUP BY	cno, term, section) t6,
+											 class c2
+								 WHERE    t6.cno = c2.cno AND t6.term = c2.term AND t6.section = c2.section) t7,
+				 professor p
+WHERE 		 p.eid = t5.instructor AND t7.instructor = p.eid
+				;
+
+				
+<OUTPUT>
+DENIS|CS136|F01|2|32|69.625
+DENIS|CS230|F01|2|37|70.972972972973
+DENIS|CS234|F99|3|36|69.6388888888889
+DENIS|CS247|F01|1|42|70.5714285714286
+DENIS|CS436|F99|3|56|72.6964285714286
+DENIS|CS442|F01|3|33|71.2727272727273
+DENIS|CS444|F01|1|45|72.1555555555556
+DENIS|CS447|F99|3|66|69.5151515151515
+MOLLIE|MATH197|F01|2|46|71.8695652173913
+MOLLIE|MATH221|F99|2|49|70.4489795918367
+MARLA|MATH225|F01|1|39|69.2564102564103
+ZELDA|MATH225|F01|2|45|68.8
+MARLA|MATH245|F01|2|47|74.063829787234
+MOLLIE|MATH245|F99|1|72|70.7222222222222
+ZELDA|MATH250|F99|2|74|71.7837837837838
+ZELDA|MATH334|F01|2|46|72.5652173913043
+MARLA|MATH340|F01|3|44|72.7272727272727
+MARLA|MATH340|F99|2|71|72.0
+MOLLIE|MATH362|F05|2|32|73.625
+MARLA|MATH362|F99|2|58|69.2413793103448
+MOLLIE|MATH362|F99|3|64|72.015625
+MARLA|MATH362|S02|2|33|73.8787878787879
+MOLLIE|MATH362|S06|2|33|74.4848484848485
+MOLLIE|MATH381|F01|2|55|71.2545454545455
+MOLLIE|MATH381|F01|3|63|71.0
+MARLA|MATH395|F99|2|77|71.4285714285714
+ZELDA|MATH399|F01|1|53|72.0754716981132
+ZELDA|MATH424|F99|3|65|72.0461538461538
+MOLLIE|MATH427|F01|2|38|72.2368421052632
+MOLLIE|MATH427|F99|2|73|69.6027397260274
+MARLA|MATH428|F01|2|44|70.6818181818182
+MOLLIE|MATH428|F01|3|64|70.1875
+MARLA|MATH439|F01|2|58|70.051724137931
+ZELDA|MATH439|F99|2|85|72.2588235294118
+ZELDA|MATH474|F01|3|54|71.7222222222222
+MARLA|MATH476|F01|2|68|71.9411764705882
+MARLA|MATH476|F99|3|95|71.7263157894737
+ZELDA|MATH479|F01|1|70|70.8857142857143
+MARLA|MATH479|F99|2|80|70.5625
+ZELDA|MATH492|F01|1|51|70.7647058823529
+MOLLIE|MATH492|F99|2|70|72.3
+GAYLA|PHYS133|F99|2|76|73.6184210526316
+GAYLA|PHYS243|F01|3|65|72.1846153846154
